@@ -9,3 +9,8 @@ function getComputerChoice() {
             return "scissors";
     }
 }
+
+function getHumanChoice() {
+    //Iterate until getting a valid answer
+        //Ask the user to enter an option between rock, paper and scissors and store it in a variable
+}
