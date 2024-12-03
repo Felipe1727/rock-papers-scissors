@@ -16,6 +16,22 @@ function playGame() {
     if(humanScore !== computerScore){
         console.log(getWinner());
     }
+
+    //reset game option
+    reset(prompt("Do you want to play again? y/n").trim().toLocaleLowerCase());
+}
+
+function reset(text) {
+    if (text === 'y') {
+        console.log("That's great!\nLet's go again!")
+        computerScore = 0;
+        humanScore = 0;
+        playGame();
+    } else {
+        console.log("Thanks for playing!\nHave a great day!")
+        computerScore = 0;
+        humanScore = 0;
+    }
 }
 
 function getWinner() {
