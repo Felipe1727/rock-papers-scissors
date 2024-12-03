@@ -18,7 +18,7 @@ function playGame() {
     }
 }
 
-function getWinner(score = ()=>{}) {
+function getWinner() {
     if (computerScore > humanScore){
         console.log("You lost!\nThe final score is:");
         return `Computer: ${computerScore}  -  Human: ${humanScore}`;
