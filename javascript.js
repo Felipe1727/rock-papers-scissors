@@ -1,6 +1,22 @@
 let humanScore = 0;
 let computerScore = 0;
 
+function playGame() {
+    //iterate 5 rounds
+    for(i = 0; i < 5; i++) {
+        playRound();
+    };
+
+    //Handle tie
+    if (humanScore == computerScore) {
+        console.log('hi');
+    }
+
+    //Get a winner (separate function)
+}
+
+
+
 function playRound(computerChoice = getComputerChoice(), humanChoice = getHumanChoice()) {
     if(humanChoice === computerChoice) {
         console.log("It's a tie!");
