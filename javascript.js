@@ -7,15 +7,39 @@ function playGame() {
         playRound();
     };
 
-    //Handle tie
+    //Handle tie (separate function)
     if (humanScore == computerScore) {
-        console.log('hi');
+        
     }
 
     //Get a winner (separate function)
 }
 
-
+function handleTie(){
+    let iterate = true;
+    while(iterate){
+        const tie = prompt("Do you want to go into a tiebreaker? y/n").trim().toLocaleLowerCase();
+        if(tie === y || tie === n) {
+            iterate = false;
+        }
+    }
+    //tiebreaker
+    if (tie === y){
+        //Invoke playRound until there is a win
+        iterate = true;
+        while(iterate){
+            playRound();
+            //detect win
+            if (humanScore !== computerScore) {
+                iterate = false;
+            }
+        }
+    } else {
+        console.log("So it is a tie!\nThe final score is:");
+        console.log(()=>{`Human: ${humanScore}  -  Computer: ${computerScore}`})
+    }
+    
+}
 
 function playRound(computerChoice = getComputerChoice(), humanChoice = getHumanChoice()) {
     if(humanChoice === computerChoice) {
