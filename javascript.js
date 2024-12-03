@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+playGame();
 
 function playGame() {
     //iterate 5 rounds
