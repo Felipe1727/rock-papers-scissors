@@ -1,6 +1,24 @@
 let humanScore = 0;
 let computerScore = 0;
 
+function playRound(computerChoice = getComputerChoice(), humanChoice = getHumanChoice()) {
+    switch(`${humanChoice + computerChoice}`) {
+        //IF human wins
+        case  "rock" + "scissors" || "paper" + "rock" || "rock" + "scissors":
+            humanScore ++;
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            //TO-DO function of global score
+            console.log();
+            break;
+        //IF computer wins
+        case "rock" + "paper" || "paper" + "scissors" || "scissors" + "rock":
+            computerScore ++;
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            console.log();
+            break;
+    }
+}
+
 function getComputerChoice() {
     const randomNum = Math.floor(Math.random() * 3) + 1;
     switch (randomNum) {
