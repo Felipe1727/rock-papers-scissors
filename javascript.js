@@ -8,23 +8,36 @@ function playGame() {
     };
 
     //Handle tie (separate function)
-    if (humanScore == computerScore) {
-        
+    if (humanScore === computerScore) {
+        handleTie();
     }
 
     //Get a winner (separate function)
+    if(humanScore !== computerScore){
+        console.log(getWinner());
+    }
+}
+
+function getWinner(score = ()=>{}) {
+    if (computerScore > humanScore){
+        console.log("You lost!\nThe final score is:");
+        return `Computer: ${computerScore}  -  Human: ${humanScore}`;
+    }
+    console.log("You won!\nThe final score is:");
+    return `Human: ${humanScore}  -  Computer: ${computerScore}`;
 }
 
 function handleTie(){
     let iterate = true;
+    let tie;
     while(iterate){
-        const tie = prompt("Do you want to go into a tiebreaker? y/n").trim().toLocaleLowerCase();
-        if(tie === y || tie === n) {
+        tie = prompt("Do you want to go into a tiebreaker? y/n").trim().toLocaleLowerCase();
+        if(tie === 'y' || tie === 'n') {
             iterate = false;
         }
     }
     //tiebreaker
-    if (tie === y){
+    if (tie === 'y'){
         //Invoke playRound until there is a win
         iterate = true;
         while(iterate){
@@ -36,7 +49,7 @@ function handleTie(){
         }
     } else {
         console.log("So it is a tie!\nThe final score is:");
-        console.log(()=>{`Human: ${humanScore}  -  Computer: ${computerScore}`})
+        console.log(`Human: ${humanScore}  -  Computer: ${computerScore}`)
     }
     
 }
