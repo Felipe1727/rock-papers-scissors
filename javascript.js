@@ -11,6 +11,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    //Iterate until getting a valid answer
-        //Ask the user to enter an option between rock, paper and scissors and store it in a variable
+    while (true) {
+        let humanChoice = prompt("Rock, Paper or Scissors?").trim().toLocaleLowerCase();
+        switch(humanChoice) {
+            case "rock":
+                return humanChoice;
+            case "paper":
+                return humanChoice;
+            case "scissors":
+                return humanChoice;
+            default:
+                console.log("Invalid choice")
+        }
+    }
 }
